@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1> this is registration page </h1>
+{% if register %}
+<div class="alert alert-success"> registartion successfull </div>
+{% else %}
+<form  enctype="multipart/form-data" method="POST">
+
+{{user_form.as_p}}
+{{user_info.as_p}}
+{% csrf_token %}
+<input type="submit" name="submit" value="Register">
+</form>
+{% endif %}
+
+{% endblock body %}

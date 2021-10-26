@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>{{name}}</h1>
+<br>
+<br>
+<form  method='POST'>
+<label for="username">Username:</label>
+<br>
+<input type="text" name="username" placeholder="Enter Username.." required class="form-control">
+<br><br>
+
+<label for="password">Password:</label>
+<br>
+<input type="password" name="password" placeholder="Enter password.." required class="form-control">
+{% csrf_token %}
+<br>
+<br>
+
+<input type="submit" name="submit" value='Login' class="btn btn-primary">
+
+</form>
+
+{% endblock body %}

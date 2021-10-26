@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1> this is index page </h1>
+{%if user.is_authenticated%}
+<p>Hi,{{user_basic_info.username}}</p>
+<p> your Email {{user_basic_info.email}}</p>
+<p> <a href="{{user_moreinfo.fb_id}}">Faccbook</a> </p>
+<image src="/media/{{user_moreinfo.profile_pic}}" width="200px">
+{%else%}
+<div class="alert alert-primary">You are not Login </div>
+{%endif%}
+
+
+{% endblock body %}
